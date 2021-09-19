@@ -7,10 +7,10 @@ def get_location():
     location = {'city': response['city'],
                 'region': response['region'],
                 'country': response['country'],
-                'latitude': response['lat'],
-                'longitude': response['lon'],
+                'lat': response['lat'],
+                'lon': response['lon'],
                 'isp': response['isp'],
-                'ip_address': response['query']}
+                'query': response['query']}
     return location
 
 print(get_location())

@@ -1,11 +1,15 @@
 import cv2
+import pyimgur
+from constants import IMGUR_KEY
 
-<<<<<<< Updated upstream
-def use_camera(self):
-=======
+
 def use_camera():
->>>>>>> Stashed changes
     webcam = cv2.VideoCapture(0)
     check, frame = webcam.read()
     cv2.imwrite(filename=r'images\image.jpg', img=frame)
     webcam.release()
+
+    im = pyimgur.Imgur(IMGUR_KEY)
+    upload = im.upload_image("images\image.jpg", title="name_any")
+
+    return upload.link_big_square

