@@ -10,7 +10,8 @@ def get_location():
                 'latitude': response['lat'],
                 'longitude': response['lon'],
                 'isp': response['isp'],
-                'ip address': response['query']}
+                'ip_address': response['query']}
     return location
 
 print(get_location())
+
