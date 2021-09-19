@@ -1,3 +1,4 @@
+
 from constants import *
 from twilio.rest import Client
 import camera
@@ -21,5 +22,11 @@ def report():
     message = client.messages.create(
         to=USER_NUMBER,
         from_=TWILIO_NUMBER,
-        body="\n\n" + sms,
+        body="\n\n" + sms)
+    message2 = client.messages.create(
+        to=USER_NUMBER,
+        from_=TWILIO_NUMBER,
         media_url=['https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg'])
+
+report()
+
