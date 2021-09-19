@@ -1,4 +1,6 @@
 /.idea
 constants.py
 number
+setup.cfg
+pyproject.toml
 /__pycache__
