@@ -1,12 +1,17 @@
 import requests
 import urllib.request
 
-external_ip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-response = requests.get("http://ip-api.com/json/" + external_ip).json()
-print(response)
-location = {'City': response['city'],
-            'Region': response['region'],
-            'Country': response['country'],
-            'Latitude': response['lat'],
-            'Longitude': response['lon']
-}
+def get_location():
+    external_ip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
+    response = requests.get("http://ip-api.com/json/" + external_ip).json()
+    location = {'city': response['city'],
+                'region': response['region'],
+                'country': response['country'],
+                'latitude': response['lat'],
+                'longitude': response['lon'],
+                'isp': response['isp'],
+                'ip_address': response['query']}
+    return location
+
+print(get_location())
+
