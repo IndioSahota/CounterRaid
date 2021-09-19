@@ -2,7 +2,6 @@ import cv2
 import pyimgur
 from constants import IMGUR_KEY
 
-
 def use_camera():
     webcam = cv2.VideoCapture(0)
     check, frame = webcam.read()

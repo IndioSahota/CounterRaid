@@ -1,3 +1,4 @@
+
 from constants import *
 from twilio.rest import Client
 from logger import Logger, REPORT_DELAY
@@ -29,3 +30,4 @@ def report():
     logger.start()
 
 report()
+
