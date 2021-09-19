@@ -10,5 +10,5 @@ In order to run CounterRaid, the following commands should be run through the te
 
 `pip install opencv-contrib-python`
 `pip install geocoder`
-`pip install twillio`
+`pip install twilio`
 `pip install pyimgur`
