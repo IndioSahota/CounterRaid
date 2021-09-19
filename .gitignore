@@ -1,5 +1,5 @@
 /.idea
-constants.py
+/src/CounterRaid/constants.py
 number
 setup.cfg
 pyproject.toml
